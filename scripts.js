@@ -11,10 +11,7 @@ function initializeGrid(numOfGrids){
         divGrid.style.height = `calc((100% / ${numOfSides}))`;
         container.appendChild(divGrid);
     }
-}
 
-// Applies a pink hover effect to all grid items.
-function hoverGrid(){
     const gridItems = document.querySelectorAll(".container div");
 
     gridItems.forEach((gridItem) =>{
@@ -26,11 +23,18 @@ function hoverGrid(){
 
 // Function to create new grid
 function createNewGrid(){ 
-    let size = (prompt("Number of squares per side?")) ** 2;
-    // Reset grid
-    container.replaceChildren()
-    // Apply back css
-    initializeGrid(size);
+    let size = (Number(prompt("Enter a size between 1 and 99:")));
+    
+    // Invalid input checking
+    if(!Number.isInteger(size) || size <= 0 || size >= 100){
+        alert("Invalid Number! Try again");
+        return;
+    }else{
+        // Reset grid
+        container.replaceChildren();
+        // Apply back css
+        initializeGrid(size ** 2);
+    }
 }
 
 
