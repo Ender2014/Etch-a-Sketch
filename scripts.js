@@ -7,7 +7,7 @@ for(let i = 0; i<GRID_NUM; i++){
     container.appendChild(divGrid);
 }
 
-// Applies a hover effect to all grid items.
+// Applies a pink hover effect to all grid items.
 const gridItems = document.querySelectorAll(".container div");
 
 gridItems.forEach((gridItem) =>{
@@ -16,3 +16,10 @@ gridItems.forEach((gridItem) =>{
     });
 });
 
+// Prompt for user to set new size
+const btn = document.querySelector(".header button");
+
+btn.addEventListener("click", () => {
+    let size = prompt("Number of squares per side?");
+    console.log(size);
+})
