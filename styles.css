@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    background: #aaa;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    width:  600px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container div{
+    width: calc((100% / 16)); /* 100% divided by 16 minus border width */
+    height: calc((100% / 16)); /* 100% divided by 16 minus border width */
+    border: 1px solid black;
+}
